@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Юлия Гоголева</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Google Analytics 4 — замените G-XXXXXXXXXX на ваш реальный Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    custom_map: { dimension1: 'traffic_source' }
+  });
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --teal:    #62d6c3;
+    --teal-d:  #3db8a8;
+    --cobalt:  #4a64f5;
+    --cobalt-d:#2d47d4;
+    --brick:   #ee7258;
+    --brick-d: #cc4f35;
+    --ink:     #1a1a1a;
+    --ink-mid: #555555;
+    --ink-soft:#888888;
+    --bg:      #F9F8F6;
+    --white:   #ffffff;
+    --line:    #e8e6e2;
+  }
+
+  body {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px 60px;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Profile ── */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-bottom: 32px;
+  }
+
+  .logo-wrap {
+    margin-bottom: 12px;
+  }
+
+  .name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--ink);
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+  }
+
+  .tagline strong {
+    color: var(--ink-mid);
+    font-weight: 500;
+  }
+
+  /* ── Color accent bar ── */
+  .accent-bar {
+    display: flex;
+    gap: 0;
+    height: 3px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 20px 0 28px;
+  }
+  .accent-bar span {
+    flex: 1;
+  }
+  .accent-bar .t { background: var(--teal); }
+  .accent-bar .c { background: var(--cobalt); }
+  .accent-bar .b { background: var(--brick); }
+
+  /* ── Section label ── */
+  .label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 0 2px 8px;
+    margin-top: 20px;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1.5px solid var(--line);
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    transition: border-color .18s, transform .14s, box-shadow .18s;
+    cursor: pointer;
+  }
+  .card:hover {
+    border-color: #ccc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  }
+  .card:active { transform: scale(0.98); }
+
+  .card-inner {
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .card-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-teal   { background: rgba(98,214,195,0.15); }
+  .icon-cobalt { background: rgba(74,100,245,0.12); }
+  .icon-brick  { background: rgba(238,114,88,0.12); }
+  .icon-ink    { background: rgba(26,26,26,0.06); }
+
+  .card-text { flex: 1; min-width: 0; }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    flex-wrap: wrap;
+    line-height: 1.35;
+  }
+
+  .card-sub {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .card-arrow {
+    font-size: 20px;
+    color: var(--line);
+    flex-shrink: 0;
+    font-weight: 300;
+  }
+
+  /* ── Accent cards ── */
+  .card-product {
+    border-color: rgba(238,114,88,0.3);
+    background: #fffaf8;
+  }
+  .card-product:hover {
+    border-color: rgba(238,114,88,0.55);
+    box-shadow: 0 4px 20px rgba(238,114,88,0.12);
+  }
+
+  .card-club {
+    border-color: rgba(74,100,245,0.3);
+    background: #f8f9ff;
+  }
+  .card-club:hover {
+    border-color: rgba(74,100,245,0.5);
+    box-shadow: 0 4px 20px rgba(74,100,245,0.1);
+  }
+
+  /* ── Badge ── */
+  .badge {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    vertical-align: middle;
+    line-height: 1.4;
+  }
+  .badge-brick  { background: var(--brick);  color: #fff; }
+  .badge-cobalt { background: var(--cobalt); color: #fff; }
+  .badge-teal   { background: var(--teal);   color: #fff; }
+
+  /* ── Price ── */
+  .price {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--brick);
+    letter-spacing: 0.3px;
+  }
+  .price-old {
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-decoration: line-through;
+    margin-left: 4px;
+  }
+  .price-note {
+    font-size: 11px;
+    color: var(--teal-d);
+    margin-left: 4px;
+    font-weight: 500;
+  }
+
+  /* ── Social row ── */
+  .social-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .social-btn {
+    background: var(--white);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: border-color .18s, transform .14s, box-shadow .18s;
+    cursor: pointer;
+  }
+  .social-btn:hover {
+    border-color: #bbb;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  }
+  .social-btn:active { transform: scale(0.96); }
+
+  .social-icon { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
+  .social-icon svg { width: 22px; height: 22px; }
+  .social-label {
+    font-size: 9.5px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: 0.2px;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: var(--line);
+    margin: 24px 0 0;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 11px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    opacity: 0.6;
+  }
+
+  /* ── Source hint ── */
+  .source-hint {
+    display: none;
+    text-align: center;
+    font-size: 10px;
+    color: var(--ink-soft);
+    padding-bottom: 6px;
+    letter-spacing: 1px;
+    opacity: 0.5;
+  }
+
+  /* ── Cube icon in card ── */
+  .cube-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="source-hint" id="sourceHint"></div>
+
+  <!-- PROFILE -->
+  <div class="profile">
+
+    <!-- Isometric cube logo -->
+    <div class="logo-wrap">
+      <svg width="100" height="86" viewBox="0 0 210 160" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cube A — TEAL — bottom left -->
+        <polygon points="39.7,51.5 70,69 70,104 39.7,86.5"   fill="#3db8a8"/>
+        <polygon points="70,34 100.3,51.5 70,69 39.7,51.5"   fill="#7de8d8"/>
+        <polygon points="100.3,51.5 100.3,86.5 70,104 70,69" fill="#62d6c3"/>
+        <!-- Cube B — COBALT — bottom right -->
+        <polygon points="160.9,51.5 160.9,86.5 130.6,104 130.6,69" fill="#2d47d4"/>
+        <polygon points="130.6,34 160.9,51.5 130.6,69 100.3,51.5"  fill="#8a9bf8"/>
+        <polygon points="100.3,51.5 130.6,69 130.6,104 100.3,86.5" fill="#4a64f5"/>
+        <!-- Cube C — BRICK — top center -->
+        <polygon points="100.3,16.5 130.6,34 100.3,51.5 70,34"       fill="#f4956b"/>
+        <polygon points="70,34 100.3,51.5 100.3,86.5 70,69"          fill="#ee7258"/>
+        <polygon points="130.6,34 130.6,69 100.3,86.5 100.3,51.5"    fill="#cc4f35"/>
+        <!-- Edge highlights -->
+        <line x1="100.3" y1="16.5" x2="100.3" y2="86.5" stroke="white" stroke-width="0.8" opacity="0.5"/>
+        <line x1="70"    y1="34"   x2="70"    y2="104"  stroke="white" stroke-width="0.8" opacity="0.3"/>
+        <line x1="130.6" y1="34"   x2="130.6" y2="104"  stroke="white" stroke-width="0.8" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <div class="name">Юлия Гоголева</div>
+    <div class="tagline">
+      <strong>Психология отношений</strong> — наука и здравый смысл<br>
+      Предприниматель · исследователь жизни
+    </div>
+
+    <!-- Accent bar -->
+    <div class="accent-bar" style="width:100%">
+      <span class="t"></span>
+      <span class="c"></span>
+      <span class="b"></span>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="label">Подписаться</div>
+  <div class="social-row">
+
+    <a class="social-btn" href="https://t.me/gogolevajuls" target="_blank" data-platform="telegram">
+      <span class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" fill="#29B6F6"/>
+          <path d="M17.386 7.612L15.326 17.33C15.326 17.33 15.05 18.02 14.292 17.694L9.735 14.19L8.07 13.385L5.305 12.486C5.305 12.486 4.887 12.341 4.846 12.014C4.805 11.688 5.319 11.516 5.319 11.516L16.498 7.163C16.498 7.163 17.386 6.774 17.386 7.612Z" fill="white"/>
+          <path d="M9.5 17.5L9.07 14.2L15.23 9.4" fill="white" opacity="0.5"/>
+        </svg>
+      </span>
+      <span class="social-label">Telegram</span>
+    </a>
+
+    <a class="social-btn" href="https://www.instagram.com/gogolevajuls" target="_blank" data-platform="instagram">
+      <span class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#igGrad)"/>
+          <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8" fill="none"/>
+          <circle cx="17.2" cy="6.8" r="1.1" fill="white"/>
+          <defs>
+            <linearGradient id="igGrad" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F9A825"/>
+              <stop offset="35%" stop-color="#E91E63"/>
+              <stop offset="70%" stop-color="#9C27B0"/>
+              <stop offset="100%" stop-color="#3F51B5"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="social-label">Instagram</span>
+    </a>
+
+    <a class="social-btn" href="https://www.tiktok.com/@gogolevajuls" target="_blank" data-platform="tiktok">
+      <span class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="6" fill="#111"/>
+          <path d="M16.6 5.82A4.37 4.37 0 0 1 14.3 4v8.65a2.53 2.53 0 1 1-1.77-2.41V8.07a4.67 4.67 0 1 0 3.54 4.58V9.32a6.44 6.44 0 0 0 3.78 1.21V8.36a4.38 4.38 0 0 1-3.25-2.54Z" fill="white"/>
+          <path d="M19.85 10.53a6.44 6.44 0 0 1-3.78-1.21v5.33a4.67 4.67 0 1 1-3.54-4.58v2.17a2.53 2.53 0 1 0 1.77 2.41V4h2.07a4.37 4.37 0 0 0 3.25 4.54l.23-1.99v3.98Z" fill="#69C9D0" opacity="0.7"/>
+        </svg>
+      </span>
+      <span class="social-label">TikTok</span>
+    </a>
+
+    <a class="social-btn" href="https://youtube.com/@gogoleva_juls" target="_blank" data-platform="youtube">
+      <span class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="6" fill="#FF0000"/>
+          <path d="M19.8 8.2a2 2 0 0 0-1.4-1.4C17 6.5 12 6.5 12 6.5s-5 0-6.4.3A2 2 0 0 0 4.2 8.2C4 9.6 4 12 4 12s0 2.4.2 3.8a2 2 0 0 0 1.4 1.4C7 17.5 12 17.5 12 17.5s5 0 6.4-.3a2 2 0 0 0 1.4-1.4C20 14.4 20 12 20 12s0-2.4-.2-3.8Z" fill="white"/>
+          <polygon points="10,9.5 10,14.5 14.5,12" fill="#FF0000"/>
+        </svg>
+      </span>
+      <span class="social-label">YouTube</span>
+    </a>
+
+  </div>
+
+  <!-- ВИДЕОУРОК -->
+  <div class="label">Видеоурок</div>
+  <!-- ⚠️ ВСТАВЬТЕ ССЫЛКУ НА ПРОДУКТ в href ниже -->
+  <a class="card card-product" href="https://tribute.to/ВСТАВЬТЕ_ССЫЛКУ_НА_ПРОДУКТ" target="_blank" id="linkProduct">
+    <div class="card-inner">
+      <div class="card-icon icon-brick">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(238,114,88,0.15)"/>
+          <polygon points="10,8 10,18 19,13" fill="#ee7258"/>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="card-title">
+          Как научиться разговаривать в отношениях
+          <span class="badge badge-brick">990 ₽</span>
+        </div>
+        <div class="card-sub">32 мин · Исследования Готтмана · нейробиология конфликта · PDF в комплекте</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
+  <!-- БЕСПЛАТНО -->
+  <div class="label">Бесплатно</div>
+  <a class="card" href="https://t.me/gogolevajuls_bot" target="_blank" id="linkFree">
+    <div class="card-inner">
+      <div class="card-icon icon-teal">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(98,214,195,0.15)"/>
+          <path d="M13 7v8M9 11l4 4 4-4" stroke="#3db8a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7 18h12" stroke="#3db8a8" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="card-title">
+          Гайд «Как перестать срываться на близких»
+          <span class="badge badge-teal">Free</span>
+        </div>
+        <div class="card-sub">Напишите боту слово «гайд» — пришлю сразу</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
+  <!-- КЛУБ -->
+  <div class="label">Закрытый клуб</div>
+  <a class="card card-club" href="https://t.me/gogolevajuls_bot" target="_blank" id="linkClub">
+    <div class="card-inner">
+      <div class="card-icon icon-cobalt">
+        <!-- Mini 3-cube logo -->
+        <svg width="26" height="22" viewBox="0 0 210 160" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="39.7,51.5 70,69 70,104 39.7,86.5"   fill="#3db8a8"/>
+          <polygon points="70,34 100.3,51.5 70,69 39.7,51.5"   fill="#7de8d8"/>
+          <polygon points="100.3,51.5 100.3,86.5 70,104 70,69" fill="#62d6c3"/>
+          <polygon points="160.9,51.5 160.9,86.5 130.6,104 130.6,69" fill="#2d47d4"/>
+          <polygon points="130.6,34 160.9,51.5 130.6,69 100.3,51.5"  fill="#8a9bf8"/>
+          <polygon points="100.3,51.5 130.6,69 130.6,104 100.3,86.5" fill="#4a64f5"/>
+          <polygon points="100.3,16.5 130.6,34 100.3,51.5 70,34"       fill="#f4956b"/>
+          <polygon points="70,34 100.3,51.5 100.3,86.5 70,69"          fill="#ee7258"/>
+          <polygon points="130.6,34 130.6,69 100.3,86.5 100.3,51.5"    fill="#cc4f35"/>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="card-title">
+          Кубики Жизни
+          <span class="badge badge-cobalt">Предзапись</span>
+        </div>
+        <div class="card-sub">Закрытый клуб · старт скоро</div>
+        <div style="margin-top:5px">
+          <span class="price">740 ₽/мес</span>
+          <span class="price-old">990 ₽</span>
+          <span style="font-size:11px; color:var(--teal-d); margin-left:4px; font-weight:500;">только для предзаписи</span>
+        </div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
+  <!-- ДОНАТ -->
+  <div class="label">Поддержать</div>
+  <a class="card" href="https://t.me/tribute/app?startapp=dJb3" target="_blank">
+    <div class="card-inner">
+      <div class="card-icon icon-ink" style="font-size:24px; background:rgba(26,26,26,0.05);">
+        ☕
+      </div>
+      <div class="card-text">
+        <div class="card-title">Поддержать донатом</div>
+        <div class="card-sub">Если контент помогает — угостите кофе</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
+  <div class="divider"></div>
+
+  <div class="footer">
+    Юлия Гоголева · @gogolevajuls<br>
+    Психология отношений — наука и здравый смысл
+  </div>
+
+</div>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const ref    = params.get('ref') || params.get('utm_source') || '';
+
+  if (ref) {
+    const hint = document.getElementById('sourceHint');
+    if (hint) {
+      hint.style.display = 'block';
+      hint.textContent = '↗ ' + ref.toUpperCase();
+    }
+
+    const tracked = ['linkProduct', 'linkFree', 'linkClub'];
+    tracked.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      try {
+        const u = new URL(el.href);
+        if (u.hostname === 't.me') {
+          // Telegram игнорирует utm_source — передаём через start=
+          // t.me/gogolevajuls_bot?start=tiktok → бот сохранит источник в Notion
+          u.searchParams.set('start', ref);
+        } else {
+          u.searchParams.set('utm_source', ref);
+        }
+        el.href = u.toString();
+      } catch (e) {}
+    });
+  }
+
+  if (ref) {
+    gtag('event', 'traffic_source', { traffic_source: ref });
+  }
+
+  document.querySelectorAll('[data-platform]').forEach(el => {
+    el.addEventListener('click', function () {
+      gtag('event', 'social_click', {
+        event_category: 'taplink',
+        event_label: this.getAttribute('data-platform'),
+        traffic_source: ref || 'direct'
+      });
+    });
+  });
+
+  document.querySelectorAll('[id^="link"]').forEach(el => {
+    el.addEventListener('click', function () {
+      gtag('event', 'product_click', {
+        event_category: 'taplink',
+        event_label: this.id,
+        traffic_source: ref || 'direct'
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
