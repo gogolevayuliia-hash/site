@@ -413,6 +413,27 @@
 
   </div>
 
+  <!-- ТЕСТ НА РАЗГОВОР -->
+  <div class="label">Бесплатный тест</div>
+  <a class="card" href="https://t.me/gogolevajuls_bot?start=talk" target="_blank" id="linkTalk">
+    <div class="card-inner">
+      <div class="card-icon icon-brick">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(238,114,88,0.12)"/>
+          <path d="M7 9h12M7 13h8M7 17h5" stroke="#ee7258" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="card-title">
+          Как вы разговариваете в конфликте
+          <span class="badge badge-brick">Free</span>
+        </div>
+        <div class="card-sub">5 вопросов · 4 паттерна Готтмана · результат с разбором</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
   <!-- ВИДЕОУРОК -->
   <div class="label">Видеоурок</div>
   <!-- ⚠️ ВСТАВЬТЕ ССЫЛКУ НА ПРОДУКТ в href ниже -->
@@ -548,7 +569,7 @@
       hint.textContent = '↗ ' + ref.toUpperCase();
     }
 
-    const tracked = ['linkProduct', 'linkFree', 'linkQuiz', 'linkClub'];
+    const tracked = ['linkProduct', 'linkFree', 'linkQuiz', 'linkClub', 'linkTalk'];
     tracked.forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
