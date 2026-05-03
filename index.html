@@ -42,7 +42,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 40px 16px 60px;
+    padding: 20px 16px 60px;
     font-family: 'Inter', -apple-system, sans-serif;
   }
 
@@ -59,11 +59,11 @@
     flex-direction: column;
     align-items: center;
     gap: 0;
-    padding-bottom: 32px;
+    padding-bottom: 20px;
   }
 
   .logo-wrap {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .name {
@@ -239,10 +239,52 @@
     font-weight: 500;
   }
 
+  /* ── Telegram channel card ── */
+  .tg-channel-card {
+    background: var(--white);
+    border: 1.5px solid var(--line);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: border-color .18s, transform .14s, box-shadow .18s;
+    cursor: pointer;
+  }
+  .tg-channel-card:hover {
+    border-color: #29B6F6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(41,182,246,0.12);
+  }
+  .tg-channel-card:active { transform: scale(0.98); }
+
+  .tg-channel-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(41,182,246,0.12);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .tg-channel-text { flex: 1; }
+  .tg-channel-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .tg-channel-sub {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
   /* ── Social row ── */
   .social-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     margin-bottom: 4px;
   }
@@ -355,20 +397,25 @@
     </div>
   </div>
 
-  <!-- SOCIAL -->
-  <div class="label">Подписаться</div>
-  <div class="social-row">
+  <!-- TELEGRAM CHANNEL -->
+  <a class="tg-channel-card" href="https://t.me/gogolevajuls" target="_blank" data-platform="telegram" id="linkTelegram">
+    <div class="tg-channel-icon">
+      <svg viewBox="0 0 24 24" fill="none" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" fill="#29B6F6"/>
+        <path d="M17.386 7.612L15.326 17.33C15.326 17.33 15.05 18.02 14.292 17.694L9.735 14.19L8.07 13.385L5.305 12.486C5.305 12.486 4.887 12.341 4.846 12.014C4.805 11.688 5.319 11.516 5.319 11.516L16.498 7.163C16.498 7.163 17.386 6.774 17.386 7.612Z" fill="white"/>
+        <path d="M9.5 17.5L9.07 14.2L15.23 9.4" fill="white" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="tg-channel-text">
+      <div class="tg-channel-title">Телеграм канал</div>
+      <div class="tg-channel-sub">Исследования. Глубокие разборы. Навыки коммуникации</div>
+    </div>
+    <div class="card-arrow">›</div>
+  </a>
 
-    <a class="social-btn" href="https://t.me/gogolevajuls" target="_blank" data-platform="telegram">
-      <span class="social-icon">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#29B6F6"/>
-          <path d="M17.386 7.612L15.326 17.33C15.326 17.33 15.05 18.02 14.292 17.694L9.735 14.19L8.07 13.385L5.305 12.486C5.305 12.486 4.887 12.341 4.846 12.014C4.805 11.688 5.319 11.516 5.319 11.516L16.498 7.163C16.498 7.163 17.386 6.774 17.386 7.612Z" fill="white"/>
-          <path d="M9.5 17.5L9.07 14.2L15.23 9.4" fill="white" opacity="0.5"/>
-        </svg>
-      </span>
-      <span class="social-label">Telegram</span>
-    </a>
+  <!-- SOCIAL -->
+  <div class="label">Ещё площадки</div>
+  <div class="social-row">
 
     <a class="social-btn" href="https://www.instagram.com/gogolevajuls" target="_blank" data-platform="instagram">
       <span class="social-icon">
@@ -420,12 +467,17 @@
       <div class="card-icon icon-brick">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
           <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(238,114,88,0.12)"/>
-          <path d="M7 9h12M7 13h8M7 17h5" stroke="#ee7258" stroke-width="1.8" stroke-linecap="round"/>
+          <!-- чекбоксы — иконка теста -->
+          <rect x="6" y="7" width="4" height="4" rx="1" stroke="#ee7258" stroke-width="1.6" fill="none"/>
+          <path d="M7.2 9l1 1 1.6-1.6" stroke="#ee7258" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 9h7" stroke="#ee7258" stroke-width="1.6" stroke-linecap="round"/>
+          <rect x="6" y="14" width="4" height="4" rx="1" stroke="#ee7258" stroke-width="1.6" fill="none"/>
+          <path d="M13 16h7" stroke="#ee7258" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="card-text">
         <div class="card-title">
-          Как вы разговариваете в конфликте
+          Тест: Как вы говорите в конфликте
           <span class="badge badge-brick">Free</span>
         </div>
         <div class="card-sub">5 вопросов · 4 паттерна Готтмана · результат с разбором</div>
@@ -463,14 +515,16 @@
       <div class="card-icon icon-cobalt">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
           <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(74,100,245,0.1)"/>
-          <circle cx="13" cy="11" r="4" stroke="#4a64f5" stroke-width="1.7" fill="none"/>
-          <path d="M10.5 14.5C9 15.5 8 17 8 17h10s-1-1.5-2.5-2.5" stroke="#4a64f5" stroke-width="1.7" stroke-linecap="round"/>
-          <path d="M11 8.5c0-1.1.9-2 2-2s2 .9 2 2" stroke="#4a64f5" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <rect x="6" y="7" width="4" height="4" rx="1" stroke="#4a64f5" stroke-width="1.6" fill="none"/>
+          <path d="M7.2 9l1 1 1.6-1.6" stroke="#4a64f5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 9h7" stroke="#4a64f5" stroke-width="1.6" stroke-linecap="round"/>
+          <rect x="6" y="14" width="4" height="4" rx="1" stroke="#4a64f5" stroke-width="1.6" fill="none"/>
+          <path d="M13 16h7" stroke="#4a64f5" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="card-text">
         <div class="card-title">
-          Тест на тип привязанности
+          Тест: Тип привязанности
           <span class="badge badge-cobalt">Free</span>
         </div>
         <div class="card-sub">8 вопросов · тревожный / избегающий / надёжный · результат с разбором</div>
