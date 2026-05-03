@@ -437,6 +437,27 @@
 
   <!-- БЕСПЛАТНО -->
   <div class="label">Бесплатно</div>
+  <a class="card" href="https://t.me/gogolevajuls_bot?start=quiz" target="_blank" id="linkQuiz">
+    <div class="card-inner">
+      <div class="card-icon icon-cobalt">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(74,100,245,0.1)"/>
+          <circle cx="13" cy="11" r="4" stroke="#4a64f5" stroke-width="1.7" fill="none"/>
+          <path d="M10.5 14.5C9 15.5 8 17 8 17h10s-1-1.5-2.5-2.5" stroke="#4a64f5" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M11 8.5c0-1.1.9-2 2-2s2 .9 2 2" stroke="#4a64f5" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="card-title">
+          Тест на тип привязанности
+          <span class="badge badge-cobalt">Free</span>
+        </div>
+        <div class="card-sub">8 вопросов · тревожный / избегающий / надёжный · результат с разбором</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
   <a class="card" href="https://t.me/gogolevajuls_bot" target="_blank" id="linkFree">
     <div class="card-inner">
       <div class="card-icon icon-teal">
@@ -527,7 +548,7 @@
       hint.textContent = '↗ ' + ref.toUpperCase();
     }
 
-    const tracked = ['linkProduct', 'linkFree', 'linkClub'];
+    const tracked = ['linkProduct', 'linkFree', 'linkQuiz', 'linkClub'];
     tracked.forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
