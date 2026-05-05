@@ -615,6 +615,22 @@
   const params = new URLSearchParams(window.location.search);
   const ref    = params.get('ref') || params.get('utm_source') || '';
 
+  // ── Bot dashboard tracking ────────────────────────────────────────────
+  const TRACK_URL = 'https://psycology-funnel-bot-production.up.railway.app/track';
+  function track(payload) {
+    try {
+      fetch(TRACK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(() => {});
+    } catch (e) {}
+  }
+
+  // Pageview
+  track({ event: 'pageview', source: ref || 'direct' });
+
   if (ref) {
     const hint = document.getElementById('sourceHint');
     if (hint) {
@@ -661,6 +677,7 @@
         event_label: this.id,
         traffic_source: ref || 'direct'
       });
+      track({ event: 'click', label: this.id, source: ref || 'direct' });
     });
   });
 })();
