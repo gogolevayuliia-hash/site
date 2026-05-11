@@ -459,27 +459,25 @@
 
   </div>
 
-  <!-- ТЕСТ НА РАЗГОВОР -->
+  <!-- ТЕСТ ТОЧКА ПОБЕГА (новый бесплатный тест) -->
   <div class="label">Бесплатный тест</div>
-  <a class="card" href="https://t.me/gogolevajuls_bot?start=talk" target="_blank" id="linkTalk">
+  <a class="card" href="https://t.me/gogolevajuls_bot?start=escape" target="_blank" id="linkEscape">
     <div class="card-inner">
       <div class="card-icon icon-brick">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
           <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(238,114,88,0.12)"/>
-          <!-- чекбоксы — иконка теста -->
-          <rect x="6" y="7" width="4" height="4" rx="1" stroke="#ee7258" stroke-width="1.6" fill="none"/>
-          <path d="M7.2 9l1 1 1.6-1.6" stroke="#ee7258" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M13 9h7" stroke="#ee7258" stroke-width="1.6" stroke-linecap="round"/>
-          <rect x="6" y="14" width="4" height="4" rx="1" stroke="#ee7258" stroke-width="1.6" fill="none"/>
-          <path d="M13 16h7" stroke="#ee7258" stroke-width="1.6" stroke-linecap="round"/>
+          <!-- дверь — метафора «точки побега» -->
+          <rect x="8" y="5.5" width="10" height="15" rx="1.2" stroke="#ee7258" stroke-width="1.6" fill="none"/>
+          <circle cx="15.4" cy="13" r="0.9" fill="#ee7258"/>
+          <path d="M11 9.5v7" stroke="#ee7258" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
         </svg>
       </div>
       <div class="card-text">
         <div class="card-title">
-          Тест: Как вы говорите в конфликте
+          Тест: Точка побега
           <span class="badge badge-brick">Free</span>
         </div>
-        <div class="card-sub">5 вопросов · 4 паттерна Готтмана · результат с разбором</div>
+        <div class="card-sub">12 вопросов · как вы избегаете контакта с собой · 3 стратегии побега + глубина паттерна</div>
       </div>
       <div class="card-arrow">›</div>
     </div>
@@ -527,6 +525,29 @@
           <span class="badge badge-cobalt">Free</span>
         </div>
         <div class="card-sub">8 вопросов · тревожный / избегающий / надёжный · результат с разбором</div>
+      </div>
+      <div class="card-arrow">›</div>
+    </div>
+  </a>
+
+  <a class="card" href="https://t.me/gogolevajuls_bot?start=talk" target="_blank" id="linkTalk">
+    <div class="card-inner">
+      <div class="card-icon icon-cobalt">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect x="2" y="2" width="22" height="22" rx="6" fill="rgba(74,100,245,0.1)"/>
+          <rect x="6" y="7" width="4" height="4" rx="1" stroke="#4a64f5" stroke-width="1.6" fill="none"/>
+          <path d="M7.2 9l1 1 1.6-1.6" stroke="#4a64f5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 9h7" stroke="#4a64f5" stroke-width="1.6" stroke-linecap="round"/>
+          <rect x="6" y="14" width="4" height="4" rx="1" stroke="#4a64f5" stroke-width="1.6" fill="none"/>
+          <path d="M13 16h7" stroke="#4a64f5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="card-text">
+        <div class="card-title">
+          Тест: Как вы говорите в конфликте
+          <span class="badge badge-cobalt">Free</span>
+        </div>
+        <div class="card-sub">5 вопросов · 4 паттерна Готтмана · результат с разбором</div>
       </div>
       <div class="card-arrow">›</div>
     </div>
@@ -638,7 +659,7 @@
       hint.textContent = '↗ ' + ref.toUpperCase();
     }
 
-    const tracked = ['linkProduct', 'linkFree', 'linkQuiz', 'linkClub', 'linkTalk'];
+    const tracked = ['linkProduct', 'linkFree', 'linkQuiz', 'linkClub', 'linkTalk', 'linkEscape'];
     tracked.forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
